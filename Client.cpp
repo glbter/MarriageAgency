@@ -6,6 +6,12 @@
 using namespace std;
 
 
+Client::Client(const string& pib, const bool& isMarried)
+{
+    this->setPIB(pib);
+    this->setisMarried(isMarried);
+}
+
 Client::~Client()
 {
   // nothing much to do in terms of cleanup
@@ -198,4 +204,18 @@ string Client::getPartherInfo() const
 void Client::setPartherInfo(const string& inPartherInfo)
 {
   mPartherInfo = inPartherInfo;
+}
+
+string Client::display() const {
+        cout <<getPIB() << " "
+            << getisMarried() << " "
+            << getClientCode() << " "
+            << getAge() << " "
+            << getSex() << " "
+            << getHoby() << " "
+            << getHeight() << " "
+            << getNumberOfChilds() << " "
+            << getAddress() << " "
+            << calculatePriceInDollars()
+            << std::endl;
 }
