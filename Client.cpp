@@ -5,11 +5,11 @@
 
 using namespace std;
 
+Client::Client() {
 
-Client::Client(const string& pib, const bool& isMarried)
+}
+Client::Client(const std::string& pib,  const bool& isMarried):mPIB(pib),fisMarried(isMarried)
 {
-    this->setPIB(pib);
-    this->setisMarried(isMarried);
 }
 
 Client::~Client()
@@ -207,26 +207,26 @@ void Client::setPartherInfo(const string& inPartherInfo)
 }
 
 string Client::display() const {
-        cout 
-            << getClientCode() << " "
-            << getPIB() << " "
-            << getDate() << " "
-            << getSex() << " "
-            << getAge() << " "
-            << getHoby() << " "
-            << getHeight() << " "
-            << getWeight() << " "
-            << getNumberOfChilds() << " "
-            << getBadHabits() << " "
-            << getHoby() << " "
-            << getDescription() << " "
-            << getSignCode() << " "
-            << getNationalityCode() << " "
-            << getAddress() << " "
-            << getPhone() << " "
-            << getPassport() << " "
-            << getPartherInfo() << " "
-            << getisMarried() << " "
+        cout << "Client Info" << endl
+            << getClientCode() << endl
+            << getPIB() << endl
+            << getDate() << endl
+            << getSex() << endl
+            << getAge() << endl
+            << getHoby() << endl
+            << getHeight() << endl
+            << getWeight() << endl
+            << getNumberOfChilds() <<endl
+            << getBadHabits() << endl
+            << getHoby() << endl
+            << getDescription() << endl
+            << getSignCode() << endl
+            << getNationalityCode() << endl
+            << getAddress() << endl
+            << getPhone() << endl
+            << getPassport() << endl
+            << getPartherInfo() << endl
+            << getisMarried() << endl
             << calculatePriceInDollars() 
-            << std::endl;
+            << endl;
 }

@@ -1,10 +1,11 @@
 // Client.h
 
 #include <string>
+using namespace std;
 class Client
 {
  public:
-  Client() = default;
+  Client();
   Client(const string& pib, const bool& isMarried);
   ~Client();
 
@@ -66,4 +67,4 @@ class Client
   std::string  mPassport = "Unknown";
   std::string  mPartherInfo = "Unknown";
   bool         fisMarried = false;
-}; 
+};
