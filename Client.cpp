@@ -43,180 +43,180 @@ int Client::calculatePriceInDollars()
   return static_cast<int>((getNumberOfChilds() * 500));
 }
 
-int Client::getClientCode()
+int Client::getClientCode() const
 {
   return mClientCode;
 }
 
-void Client::setClientCode(int inCode)
+void Client::setClientCode(const int& inCode)
 {
   mClientCode = inCode;
 }
 
-string Client::getPIB()
+string Client::getPIB() const
 {
   return mPIB;
 }
 
-void Client::setPIB(string inPIB)
+void Client::setPIB(const string& inPIB)
 {
   mPIB = inPIB;
 }
-string Client::getSex()
+string Client::getSex() const
 {
   return mSex;
 }
 
-void Client::setSex(string inSex)
+void Client::setSex(const string& inSex)
 {
   mSex = inSex;
 }
 
-string Client::getDate()
+string Client::getDate() const
 {
   return mDate;
 }
 
-void Client::setDate(string inDate)
+void Client::setDate(const string& inDate)
 {
   mDate = inDate;
 }
 
-int Client::getAge()
+int Client::getAge() const
 {
   return mAge;
 }
 
-void Client::setAge(int inAge)
+void Client::setAge(const int& inAge)
 {
   mAge = inAge;
 }
 
-int Client::getHeight()
+int Client::getHeight() const
 {
   return mHeight;
 }
 
-void Client::setHeight(int inHeight)
+void Client::setHeight(const int& inHeight)
 {
   mHeight = inHeight;
 }
 
-int Client::getWeight()
+int Client::getWeight() const
 {
   return mWeight;
 }
 
-void Client::setWeight(int inWeight)
+void Client::setWeight(const int& inWeight)
 {
   mWeight = inWeight;
 }
 
-int Client::getNumberOfChilds()
+int Client::getNumberOfChilds() const
 {
   return mNumberOfChilds;
 }
 
-void Client::setNumberOfChilds(int inNumberOfChilds)
+void Client::setNumberOfChilds(const int& inNumberOfChilds)
 {
   mNumberOfChilds = inNumberOfChilds;
 }
 
-bool Client::getisMarried()
+bool Client::getisMarried() const
 {
   return fisMarried;
 }
 
-void Client::setisMarried(bool inMarried)
+void Client::setisMarried(const bool& inMarried)
 {
   fisMarried = inMarried;
 }
-string Client::getBadHabits()
+string Client::getBadHabits() const
 {
   return mBadHabits;
 }
 
-void Client::setBadHabits(string inBadHabits)
+void Client::setBadHabits(const string& inBadHabits)
 {
   mBadHabits = inBadHabits;
 }
 
-string Client::getHoby()
+string Client::getHoby() const
 {
   return mHoby;
 }
 
-void Client::setHoby(string inHoby)
+void Client::setHoby(const string& inHoby)
 {
   mHoby = inHoby;
 }
 
-string Client::getDescription()
+string Client::getDescription() const
 {
   return mDescription;
 }
 
-void Client::setDescription(string inDescription)
+void Client::setDescription(const string& inDescription)
 {
   mDescription = inDescription;
 }
 
-int Client::getSignCode()
+int Client::getSignCode() const
 {
   return mSignCode;
 }
 
-void Client::setSignCode(int inSignCode)
+void Client::setSignCode(const int& inSignCode)
 {
   mSignCode = inSignCode;
 }
 
-int Client::getNationalityCode()
+int Client::getNationalityCode() const
 {
   return mNationalityCode;
 }
 
-void Client::setNationalityCode(int inNationalityCode)
+void Client::setNationalityCode(const int& inNationalityCode)
 {
   mNationalityCode = inNationalityCode;
 }
 
-string Client::getAddress()
+string Client::getAddress() const
 {
   return mAddress;
 }
 
-void Client::setAddress(string inAddress)
+void Client::setAddress(const string& inAddress)
 {
   mAddress = inAddress;
 }
 
-string Client::getPhone()
+string Client::getPhone() const 
 {
   return mPhone;
 }
 
-void Client::setPhone(string inPhone)
+void Client::setPhone(const string& inPhone)
 {
   mPhone = inPhone;
 }
 
-string Client::getPassport()
+string Client::getPassport() const
 {
   return mPassport;
 }
 
-void Client::setPassport(string inPassport)
+void Client::setPassport(const string& inPassport)
 {
   mPassport = inPassport;
 }
 
-string Client::getPartherInfo()
+string Client::getPartherInfo() const
 {
   return mPartherInfo;
 }
 
-void Client::setPartherInfo(string inPartherInfo)
+void Client::setPartherInfo(const string& inPartherInfo)
 {
   mPartherInfo = inPartherInfo;
 }
