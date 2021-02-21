@@ -6,7 +6,8 @@
 using namespace std;
 class DataBase {
     public:
-        DataBase();
+        DataBase() = default;
+        DataBase(const string& db_filename);
         ~DataBase();
         Client& addClient(const string& pib, const  bool& isMarried);
         Client& getClient(const int& clientCode) ;
@@ -18,4 +19,5 @@ class DataBase {
     private:
         int nextClientCode = 666;
         vector<Client> clients;
+        string db_filename;
 };
