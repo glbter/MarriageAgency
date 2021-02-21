@@ -1,7 +1,7 @@
 #pragma once
+#include "Client.h"
 #include <string>
 #include <vector>
-#include <Client.h>
 
 using namespace std;
 class DataBase {
@@ -19,5 +19,4 @@ class DataBase {
     private:
         int nextClientCode = 666;
         vector<Client> clients;
-        string db_filename;
 };

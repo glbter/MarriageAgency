@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdexcept>
-#include <DataBase.h>
+#include "DataBase.h"
 
 using namespace std;
 DataBase::DataBase(const string& db_filename) {
@@ -23,11 +23,25 @@ DataBase::DataBase(const string& db_filename) {
     std::string  Passport;
     std::string  PartherInfo;
     bool         isMarried;
-    Client db_client;
+    
+    std:string newLine;
     while (cin>>ClientCode)
     {
-       cin>>PIB>>Sex>>Date>>Age>>Height>>Weight>>NumberOfChilds>>BadHabits>>Hoby>>Description;
-       cin>>SignCode>>NationalityCode>>Address>>Phone>>Passport>>PartherInfo>>isMarried;
+        Client db_client;
+       getline(cin, newLine); 
+       getline(cin, PIB);
+       cin>>Sex>>Date>>Age>>Height>>Weight>>NumberOfChilds;
+       getline(cin, newLine);
+       getline(cin, BadHabits);
+       getline(cin, Hoby);
+       getline(cin, Description);
+       cin>>SignCode>>NationalityCode;
+       getline(cin, newLine);
+       getline(cin, Address);
+       cin>>Phone>>Passport;
+       getline(cin, newLine);
+       getline(cin, PartherInfo);
+       cin>>isMarried;
        db_client.setClientCode(ClientCode);
        db_client.setPIB(PIB);
        db_client.setSex(Sex);
@@ -46,6 +60,7 @@ DataBase::DataBase(const string& db_filename) {
        db_client.setPassport(Passport);
        db_client.setPartherInfo(PartherInfo);
        db_client.setisMarried(isMarried);
+       this->clients.push_back(db_client);
     }
     
 }
@@ -71,18 +86,18 @@ Client& DataBase::addClient(const string& pib, const bool& isMarried){
 }
 
 void DataBase::displayAll() const {
-    for(const Client& client : this->clients) {
+    for(auto client : this->clients) {
         client.display();
     }
 }
 void DataBase::displayMarried() const {
-    for(const Client& client : this->clients) {
+    for(auto client : this->clients) {
         if(client.getisMarried()) 
              client.display();
     }
 }
 void DataBase::displayUnmarried() const {
-    for(const Client& client : this->clients) {
+    for(auto client : this->clients) {
         if(!client.getisMarried()) 
              client.display();
     }
