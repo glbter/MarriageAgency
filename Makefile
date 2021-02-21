@@ -6,5 +6,13 @@ clean:
 	@rm -f *.o 
 	@rm -f *.c
 	@rm main
+client: Client.cpp MarriageAgencyTest.cpp
+	@g++ -c Client.cpp MarriageAgencyTest.cpp
+	@g++ -o main Client.o MarriageAgencyTest.cpp
+	@./main
+database: DataBase.cpp DataBaseTest.cpp Client.cpp
+	@gcc -c DataBase.cpp DataBaseTest.cpp Client.cpp
+	@g++ -o main DataBase.o DataBaseTest.o Client.o
+	@./main
 run:
 	@./main
