@@ -207,15 +207,26 @@ void Client::setPartherInfo(const string& inPartherInfo)
 }
 
 string Client::display() const {
-        cout <<getPIB() << " "
-            << getisMarried() << " "
+        cout 
             << getClientCode() << " "
-            << getAge() << " "
+            << getPIB() << " "
+            << getDate() << " "
             << getSex() << " "
+            << getAge() << " "
             << getHoby() << " "
             << getHeight() << " "
+            << getWeight() << " "
             << getNumberOfChilds() << " "
+            << getBadHabits() << " "
+            << getHoby() << " "
+            << getDescription() << " "
+            << getSignCode() << " "
+            << getNationalityCode() << " "
             << getAddress() << " "
-            << calculatePriceInDollars()
+            << getPhone() << " "
+            << getPassport() << " "
+            << getPartherInfo() << " "
+            << getisMarried() << " "
+            << calculatePriceInDollars() 
             << std::endl;
 }
