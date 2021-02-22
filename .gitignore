@@ -1,4 +1,8 @@
 .idea
+.vscode
 *.o
+*.a
+*.so
 main
 /.idea/
+/build
