@@ -4,6 +4,6 @@
 *.a
 *.so
 main
-/.vscode
+/.vscode/
 /.idea/
 /build
