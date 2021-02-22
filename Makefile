@@ -1,11 +1,13 @@
 CCX = g++
-MAIN := main
-MAIN_NAME := MarriageAgencyTest
+MAIN := main_db#main
+MAIN_DB := main_db
+MAIN_NAME := DataBaseTest#MarriageAgencyTest
+MAIN_NAME_DB := DataBaseTest
 BUILD_DIR := ./build
 STATIC_LIB := lib_static
 DYNAMIC_LIB := lib_dynamic
 
-SRC := Client.cpp #MarriageAgencyTest.cpp
+SRC := Client.cpp DataBase.cpp
 OBJS := $(SRC:%=$(BUILD_DIR)/%.o)
 
 collect_static : $(BUILD_DIR)/$(MAIN)_s
@@ -29,12 +31,11 @@ $(BUILD_DIR)/$(MAIN)_d : $(MAIN_NAME).cpp $(BUILD_DIR)/$(DYNAMIC_LIB).so
 
 # creating a dynamic library:
 $(BUILD_DIR)/$(DYNAMIC_LIB).so : $(OBJS)#$(BUILD_DIR)/Client.cpp
-	$(CCX) $^ -shared  -o $@ -lc
+	@$(CCX) $^ -shared  -o $@ -lc
 
 # compile files
 $(BUILD_DIR)/%.cpp.o : %.cpp
 	@$(CXX) -c -fPIC $< -o $@
-
 
 
 clean:
@@ -62,3 +63,4 @@ run_dynamic:
 
 #	LD_LIBRARY_PATH=.
 #	export LD_LIBRARY_PATH
+
