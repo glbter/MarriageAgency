@@ -5,26 +5,11 @@
 
 using namespace std;
 
-Client::Client()
-{
-  // initialize data members
-  fisMarried = false; 
-  mPIB = "Unknown Client";
-  mNumberOfChilds = 0;
-  mAge = 0;
-  mClientCode = 0;
-  mSex = "Unknown";
-  mDate = "Unknown";
-  mHeight = 0;
-  mWeight = 0;
-  mBadHabits = "Write C code";
-  mDescription = "Unknown";
-  mSignCode = 0;
-  mNationalityCode = 0;
-  mPhone = "Unknown";
-  mPassport = "Unknown";
-  mPartherInfo = "Unknown";
+Client::Client() {
 
+}
+Client::Client(const std::string& pib,  const bool& isMarried):mPIB(pib),fisMarried(isMarried)
+{
 }
 
 Client::~Client()
@@ -32,7 +17,7 @@ Client::~Client()
   // nothing much to do in terms of cleanup
 }
 
-int Client::calculatePriceInDollars()
+int Client::calculatePriceInDollars() const
 {
   if (getNumberOfChilds() > 3) {
 
@@ -219,4 +204,29 @@ string Client::getPartherInfo() const
 void Client::setPartherInfo(const string& inPartherInfo)
 {
   mPartherInfo = inPartherInfo;
+}
+
+string Client::display() const {
+        cout << "Client Info" << endl
+            << getClientCode() << endl
+            << getPIB() << endl
+            << getDate() << endl
+            << getSex() << endl
+            << getAge() << endl
+            << getHoby() << endl
+            << getHeight() << endl
+            << getWeight() << endl
+            << getNumberOfChilds() <<endl
+            << getBadHabits() << endl
+            << getHoby() << endl
+            << getDescription() << endl
+            << getSignCode() << endl
+            << getNationalityCode() << endl
+            << getAddress() << endl
+            << getPhone() << endl
+            << getPassport() << endl
+            << getPartherInfo() << endl
+            << getisMarried() << endl
+            << calculatePriceInDollars() 
+            << endl;
 }

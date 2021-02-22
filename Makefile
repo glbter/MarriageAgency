@@ -38,6 +38,19 @@ $(BUILD_DIR)/%.cpp.o : %.cpp
 
 
 clean:
+	@rm -f *.o 
+	@rm -f *.c
+	@rm main
+client: Client.cpp MarriageAgencyTest.cpp
+	@g++ -c Client.cpp MarriageAgencyTest.cpp
+	@g++ -o main Client.o MarriageAgencyTest.cpp
+	@./main
+database: DataBase.cpp DataBaseTest.cpp Client.cpp
+	@gcc -c DataBase.cpp DataBaseTest.cpp Client.cpp
+	@g++ -o main DataBase.o DataBaseTest.o Client.o
+	@./main
+run:
+	@./main
 	@rm -f $(BUILD_DIR)/*.o $(BUILD_DIR)/*.a $(BUILD_DIR)/*.so $(BUILD_DIR)/$(MAIN)
 	@rm $(BUILD_DIR)/$(MAIN)_s
 	@rm $(BUILD_DIR)/$(MAIN)_d
@@ -62,3 +75,4 @@ run_dynamic:
 
 #	LD_LIBRARY_PATH=.
 #	export LD_LIBRARY_PATH
+

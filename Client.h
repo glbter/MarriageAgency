@@ -1,13 +1,15 @@
 // Client.h
 
 #include <string>
+using namespace std;
 class Client
 {
  public:
   Client();
+  Client(const string& pib, const bool& isMarried);
   ~Client();
 
-  int  calculatePriceInDollars();
+  int  calculatePriceInDollars() const;
 
   int          getClientCode() const;
   void         setClientCode(const int& code);
@@ -45,23 +47,24 @@ class Client
   void         setPassport(const std::string&passport);
   std::string  getPartherInfo() const;
   void         setPartherInfo(const std::string& partherInfo);
+  std::string  display() const;
  private:
-  int  mClientCode;
-  std::string  mPIB;
-  std::string  mSex;
-  std::string  mDate;
-  int          mAge;
-  int          mHeight;
-  int          mWeight;
-  int          mNumberOfChilds;
-  std::string  mBadHabits;
-  std::string  mHoby;
-  std::string  mDescription;
-  int          mSignCode;
-  int          mNationalityCode;
-  std::string  mAddress;
-  std::string  mPhone;
-  std::string  mPassport;
-  std::string  mPartherInfo;
-  bool         fisMarried;
-}; 
+  int  mClientCode = 0;
+  std::string  mPIB = "Unknown";
+  std::string  mSex = "Man";
+  std::string  mDate = "2002-05-13";
+  int          mAge = 18;
+  int          mHeight = 183;
+  int          mWeight = 65;
+  int          mNumberOfChilds = 0;
+  std::string  mBadHabits = "Unknown";
+  std::string  mHoby = "Write c++ programs";
+  std::string  mDescription = "Unknown";
+  int          mSignCode = -1;
+  int          mNationalityCode = -1;
+  std::string  mAddress = "Ukraine";
+  std::string  mPhone = "Unknown";
+  std::string  mPassport = "Unknown";
+  std::string  mPartherInfo = "Unknown";
+  bool         fisMarried = false;
+};
