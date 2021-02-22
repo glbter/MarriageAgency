@@ -1,4 +1,4 @@
-CCX = gcc
+CCX = g++#gcc
 CC = g++
 MAIN := main
 MAIN_NAME := MarriageAgencyTest
@@ -12,7 +12,28 @@ OBJS := $(SRC:%=$(BUILD_DIR)/%.o)
 #important------------------------
 #@gcc -o ./build/main ./build/MarriageAgencyTest.o -L./build -l_static
 #------------------------------------
+hello :
+#	g++ -fPIC -shared libhello.cpp -o libhello.so
+#	g++ hello.cpp -L. -lhello -o hello
 
+#	g++ -fPIC -Wall -g -c libhello.cpp
+#	g++ -g -shared -Wl,-soname,libhello.so.0 -o libhello.so.0.0 libhello.o -lc
+#	ldconfig -v -n .
+#	ln -sf libhello.so.0 libhello.so
+#	g++ hello.cpp -o hello -lhello -L.
+
+
+
+#	g++ -c hello.cpp
+#	g++ -c libhello.cpp
+#	ar cr libhello.a libhello.o
+#	g++ -o hello hello.o -L. -lhello
+
+
+run_hello :
+#	LD_LIBRARY_PATH=.
+#	export LD_LIBRARY_PATH
+	./hello
 
 #
 #$(BUILD_DIR)/$(MAIN) : $(OBJS)
@@ -23,11 +44,13 @@ collect_static : $(BUILD_DIR)/$(MAIN)_s
 # collecting main and static library
 $(BUILD_DIR)/$(MAIN)_s : $(BUILD_DIR)/$(MAIN_NAME).o $(BUILD_DIR)/$(STATIC_LIB).a
 #	@$(CCX) -o $@ $< -L. -l: $(BUILD_DIR)/$(STATIC_LIB).a
-	@gcc -o ./build/main ./build/MarriageAgencyTest.o -L./build -l_static
+	@$(CCX) -o $@ $< -L$(BUILD_DIR) -l_static
+	#@gcc -o ./build/main ./build/MarriageAgencyTest.o -L./build -l_static
+#	@gcc -o ./build/main MarriageAgencyTest.cpp -L./build -l_static
 
 # creating a static library:
 $(BUILD_DIR)/$(STATIC_LIB).a : $(OBJS)
-	@ar cr $@ $<
+	@ar crs $@ $^
 
 collect_dynamic : $(BUILD_DIR)/$(MAIN)_d
 # collecting main and dynamic library
@@ -56,7 +79,8 @@ clean:
 	@rm -f $(BUILD_DIR)/*.o $(BUILD_DIR)/*.a $(BUILD_DIR)/*.so $(BUILD_DIR)/$(MAIN)
 
 clean_src:
-	@rm -f *.o *.a *.so
+	@rm -f *.o *.a *.so .0
+	@rm hello
 
 run:
 	@./$(BUILD_DIR)/$(MAIN)
