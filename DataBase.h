@@ -6,7 +6,7 @@
 using namespace std;
 class DataBase {
     public:
-        DataBase() = default;
+        DataBase();
         DataBase(const string& db_filename);
         ~DataBase();
         Client& addClient(const string& pib, const  bool& isMarried);
