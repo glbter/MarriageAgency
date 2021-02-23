@@ -14,6 +14,7 @@ OBJS := $(SRC:%=$(BUILD_DIR)/%.o)
 
 collect_static : $(BUILD_DIR)/$(MAIN)_s
 
+
 # collecting main and static library
 $(BUILD_DIR)/$(MAIN)_s : $(BUILD_DIR)/$(MAIN_NAME).o $(BUILD_DIR)/$(STATIC_LIB).a
 	@$(CCX) -o $@ $< -L$(BUILD_DIR) -l_static
@@ -27,6 +28,7 @@ $(BUILD_DIR)/$(STATIC_LIB).a : $(OBJS)
 	@ar crs $@ $^
 
 collect_dynamic : $(BUILD_DIR)/$(MAIN)_d
+
 # collecting main and dynamic library
 $(BUILD_DIR)/$(MAIN)_d : $(MAIN_NAME).cpp $(BUILD_DIR)/$(DYNAMIC_LIB).so
 	@$(CCX) $< -o $@ -L $(BUILD_DIR) -l_dynamic
@@ -39,6 +41,8 @@ $(BUILD_DIR)/$(DYNAMIC_LIB).so : $(OBJS)#$(BUILD_DIR)/Client.cpp
 $(BUILD_DIR)/%.cpp.o : %.cpp
 	@$(CXX) -c -fPIC $< -o $@
 
+init_build:
+	@mkdir ./build
 
 clean:
 	@rm -f $(BUILD_DIR)/*.o $(BUILD_DIR)/*.a $(BUILD_DIR)/*.so $(BUILD_DIR)/$(MAIN)
