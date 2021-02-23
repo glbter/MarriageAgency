@@ -3,6 +3,10 @@
 #include "DataBase.h"
 
 using namespace std;
+DataBase::~DataBase() {
+
+}
+
 DataBase::DataBase(const string& db_filename) {
     freopen(db_filename.c_str(), "r", stdin);
     int  ClientCode;

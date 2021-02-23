@@ -1,7 +1,9 @@
 CCX = g++
 MAIN := main_db#main
 MAIN_DB := main_db
-MAIN_NAME := DataBaseTest#MarriageAgencyTest
+MAIN_NAME := CommandLineUI
+MAIN_NAME_COMMAND_LINE_UI := CommandLineUI
+MAIN_NAME_LAB1 := MarriageAgencyTest
 MAIN_NAME_DB := DataBaseTest
 BUILD_DIR := ./build
 STATIC_LIB := lib_static
