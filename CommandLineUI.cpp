@@ -71,22 +71,22 @@ int displayMenu()
 
 void displayAll(DataBase* db)
 {
-    cout << "All people used our marriage agency! ";
-    cout << "-----------------------------------";
+    cout << "All people used our marriage agency! "<<endl;
+    cout << "-----------------------------------"<<endl;
     db->displayAll();
 }
 
 void displayMarried(DataBase* db)
 {
-    cout << "Married people in our marriage agency! ";
-    cout << "-----------------------------------";
+    cout << "Married people in our marriage agency! "<<endl;
+    cout << "-----------------------------------"<<endl;
     db->displayMarried();
 }
 
 void displayUnmarried(DataBase* db)
 {
-    cout << "Unmarried people in our marriage agency! ";
-    cout << "-----------------------------------";
+    cout << "Unmarried people in our marriage agency! "<<endl;
+    cout << "-----------------------------------"<<endl;
     db->displayUnmarried();
 }
 
@@ -95,6 +95,7 @@ void addClient(DataBase* db)
     string pib;
     bool isMarried;
     cout << "Enter PIB ";
+    getline(cin, pib);
     getline(cin, pib);
     cout << "Is married? (0/1) ";
     cin >> isMarried;
