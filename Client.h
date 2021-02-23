@@ -47,7 +47,7 @@ class Client
   void         setPassport(const std::string&passport);
   std::string  getPartherInfo() const;
   void         setPartherInfo(const std::string& partherInfo);
-  std::string  display() const;
+  void  display() const;
  private:
   int  mClientCode = 0;
   std::string  mPIB = "Unknown";

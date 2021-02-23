@@ -206,14 +206,13 @@ void Client::setPartherInfo(const string& inPartherInfo)
   mPartherInfo = inPartherInfo;
 }
 
-string Client::display() const {
+void Client::display() const {
         cout << "Client Info" << endl
             << getClientCode() << endl
             << getPIB() << endl
-            << getDate() << endl
             << getSex() << endl
+            << getDate() << endl
             << getAge() << endl
-            << getHoby() << endl
             << getHeight() << endl
             << getWeight() << endl
             << getNumberOfChilds() <<endl
@@ -229,4 +228,5 @@ string Client::display() const {
             << getisMarried() << endl
             << calculatePriceInDollars() 
             << endl;
+
 }

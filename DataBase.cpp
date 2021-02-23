@@ -1,10 +1,15 @@
 #include <iostream>
 #include <stdexcept>
 #include "DataBase.h"
-
+#include <fstream>
 using namespace std;
+DataBase::DataBase() {
+
+};
+DataBase::~DataBase() {};
 DataBase::DataBase(const string& db_filename) {
-    freopen(db_filename.c_str(), "r", stdin);
+    // freopen(db_filename.c_str(), "r", stdin);
+     ifstream read_file(db_filename.c_str(), ios::in);
     int  ClientCode;
     std::string  PIB;
     std::string  Sex;
@@ -23,25 +28,27 @@ DataBase::DataBase(const string& db_filename) {
     std::string  Passport;
     std::string  PartherInfo;
     bool         isMarried;
-    
+    int numberOfCients = 0;
+    read_file>>numberOfCients;
     std:string newLine;
-    while (cin>>ClientCode)
+    while (numberOfCients--)
     {
         Client db_client;
-       getline(cin, newLine); 
-       getline(cin, PIB);
-       cin>>Sex>>Date>>Age>>Height>>Weight>>NumberOfChilds;
-       getline(cin, newLine);
-       getline(cin, BadHabits);
-       getline(cin, Hoby);
-       getline(cin, Description);
-       cin>>SignCode>>NationalityCode;
-       getline(cin, newLine);
-       getline(cin, Address);
-       cin>>Phone>>Passport;
-       getline(cin, newLine);
-       getline(cin, PartherInfo);
-       cin>>isMarried;
+        read_file>>ClientCode;
+       getline(read_file, newLine); 
+       getline(read_file, PIB);
+       read_file>>Sex>>Date>>Age>>Height>>Weight>>NumberOfChilds;
+       getline(read_file, newLine);
+       getline(read_file, BadHabits);
+       getline(read_file, Hoby);
+       getline(read_file, Description);
+       read_file>>SignCode>>NationalityCode;
+       getline(read_file, newLine);
+       getline(read_file, Address);
+       read_file>>Phone>>Passport;
+       getline(read_file, newLine);
+       getline(read_file, PartherInfo);
+       read_file>>isMarried;
        db_client.setClientCode(ClientCode);
        db_client.setPIB(PIB);
        db_client.setSex(Sex);
@@ -62,6 +69,11 @@ DataBase::DataBase(const string& db_filename) {
        db_client.setisMarried(isMarried);
        this->clients.push_back(db_client);
     }
+    // this->displayAll();
+    read_file.close(); 
+
+
+    
     
 }
 Client& DataBase::addClient(const string& pib, const bool& isMarried){
@@ -86,7 +98,7 @@ Client& DataBase::addClient(const string& pib, const bool& isMarried){
 }
 
 void DataBase::displayAll() const {
-    for(auto client : this->clients) {
+    for(auto& client : this->clients) {
         client.display();
     }
 }

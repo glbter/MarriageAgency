@@ -10,9 +10,9 @@ client: Client.cpp MarriageAgencyTest.cpp
 	@g++ -c Client.cpp MarriageAgencyTest.cpp
 	@g++ -o main Client.o MarriageAgencyTest.cpp
 	@./main
-database: DataBase.cpp DataBaseTest.cpp Client.cpp
-	@gcc -c DataBase.cpp DataBaseTest.cpp Client.cpp
-	@g++ -o main DataBase.o DataBaseTest.o Client.o
+database: DataBase.cpp CommandLineUI.cpp Client.cpp
+	@gcc -c DataBase.cpp CommandLineUI.cpp Client.cpp
+	@g++ -o main DataBase.o CommandLineUI.o Client.o
 	@./main
 run:
 	@./main
