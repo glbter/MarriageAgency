@@ -208,25 +208,25 @@ void Client::setPartherInfo(const string& inPartherInfo)
 
 void Client::display() const {
         cout << "Client Info" << endl
-            << getClientCode() << endl
-            << getPIB() << endl
-            << getSex() << endl
-            << getDate() << endl
-            << getAge() << endl
-            << getHeight() << endl
-            << getWeight() << endl
-            << getNumberOfChilds() <<endl
-            << getBadHabits() << endl
-            << getHoby() << endl
-            << getDescription() << endl
-            << getSignCode() << endl
-            << getNationalityCode() << endl
-            << getAddress() << endl
-            << getPhone() << endl
-            << getPassport() << endl
-            << getPartherInfo() << endl
-            << getisMarried() << endl
-            << calculatePriceInDollars() 
+            <<"Client code: " << getClientCode() << endl
+            <<"PIB: " << getPIB() << endl
+            <<"SEX: " << getSex() << endl
+            <<"Date: " << getDate() << endl
+            <<"Age: " << getAge() << endl
+            <<"Height: " << getHeight() << endl
+            <<"Weight: " << getWeight() << endl
+            <<"NumberOfChilds: " << getNumberOfChilds() <<endl
+            <<"BadHabits: " << getBadHabits() << endl
+            <<"Hoby: " << getHoby() << endl
+            <<"Description: " << getDescription() << endl
+            <<"SignCode: " << getSignCode() << endl
+            <<"NationalityCode: " << getNationalityCode() << endl
+            <<"Address: " << getAddress() << endl
+            <<"Phone: " << getPhone() << endl
+            <<"Passport: " << getPassport() << endl
+            <<"PartherInfo: " << getPartherInfo() << endl
+            <<"Married: " << getisMarried() << endl
+            <<"Price in dollars: " << calculatePriceInDollars() 
             << endl;
 
 }
